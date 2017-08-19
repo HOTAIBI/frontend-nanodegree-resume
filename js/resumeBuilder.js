@@ -38,7 +38,7 @@ var bio = {
         $("#header").append(welcomeMessageFormat);
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
-            for (skill in bio.skills) {
+            for (var skill in bio.skills) {
                 var skillFormatt = HTMLskills.replace("%data%", bio.skills[skill]);
                 $("#skills").append(skillFormatt);
             }
@@ -74,7 +74,7 @@ var education = {
     }],
     display: function() {
         /* display all school */
-        for (school in education.schools) {
+        for (var school in education.schools) {
             $("#education").append(HTMLschoolStart);
             var titleFormat = HTMLschoolName.replace("%data%", education.schools[school].name);
             var urlformat = titleFormat.replace("#", education.schools[school].url);
@@ -91,13 +91,13 @@ var education = {
         /* display all onlineCourses */
         if (education.onlineCourses.length > 0) {
             $(".education-entry:last").append(HTMLonlineClasses);
-            for (course in education.onlineCourses) {
+            for (var course in education.onlineCourses) {
 
 
-                var titleFormat = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
-                var urlformat = titleFormat.replace("#", education.onlineCourses[course].url);
+                var OnlinetitleFormat = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+                var Onlineurlformat = OnlinetitleFormat.replace("#", education.onlineCourses[course].url);
                 var schoolformat = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-                var allTitleFormat = urlformat + schoolformat;
+                var allTitleFormat = Onlineurlformat + schoolformat;
                 $(".education-entry:last").append(allTitleFormat);
                 var dateFormat = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
                 $(".education-entry:last").append(dateFormat);
@@ -118,25 +118,25 @@ var work = {
             title: "Software Developer",
             location: "Olaya St, Riyadh ",
             dates: "Feb 2017 –Present",
-            description: "Programming and developing dynamic website by using best practices and latest technology including (HTML, CSS, JavaScript, jQuery-Ajax,Vb.net, ASP.NET).\
-            Maintain, debug and review existing website coded.\
-             Build a database and write a complex query by SQL server. \
-             Communicate with users and technical teams to collect requirements, decisions how solutions should be designed and implemented. \
-             White-box testing and validating work."
+            description: "Programming and developing dynamic website by using best practices and latest technology including (HTML, CSS, JavaScript, jQuery-Ajax,Vb.net, ASP.NET)."+
+            "Maintain, debug and review existing website coded."+
+             "Build a database and write a complex query by SQL server."+
+             "Communicate with users and technical teams to collect requirements, decisions how solutions should be designed and implemented. "+
+             "White-box testing and validating work."
         },
         {
             employer: "Arcom Company",
             title: "Systems Analyst",
             location: "Abi Dajanah, Al Mursalat, Riyadh  ",
             dates: "Jun 2015- Feb 2017",
-            description: "System analysis including (User and system requirements- Use casesactivity diagram- Scenario- interfaces design) and documenting them. \
-             Quality assuring of the system analysis. \
-             Works closely with business users and team members to define business requirements"
+            description: "System analysis including (User and system requirements- Use casesactivity diagram- Scenario- interfaces design) and documenting them. "+
+             "Quality assuring of the system analysis. "+
+             "Works closely with business users and team members to define business requirements"
         }
     ],
 
     display: function() {
-        for (experience in work.jobs) {
+        for (var experience in work.jobs) {
             $("#workExperience").append(HTMLworkStart);
             var employerFormat = HTMLworkEmployer.replace("%data%", work.jobs[experience].employer);
             var titleFormat = HTMLworkTitle.replace("%data%", work.jobs[experience].title);
@@ -151,19 +151,20 @@ var work = {
 
     }
 };
+
 var projects = {
     projects: [{
             title: "Mawhiba website",
             dates: "Feb 2017 –Jun 2017",
-            description: "Content management system was built for the Mawhiba Portal to e -Learning to manage and buy courses. \
-            I am responsible for building the database using SQL Server, and the implementation of the site using asp.vb, HTML, JavaScript.",
+            description: "Content management system was built for the Mawhiba Portal to e -Learning to manage and buy courses."+
+            "I am responsible for building the database using SQL Server, and the implementation of the site using asp.vb, HTML, JavaScript.",
             images: ["images/ibdaat.png"]
         },
         {
             title: "Biometric Usability Research Platform",
             dates: "Jan 2016 –Dec 2016",
-            description: "This project aims to develop a system that combines sensors readings from brain, skin, and eye to measure usability and user experience. \
-              I built Windows Application using C# and SQL Server",
+            description: "This project aims to develop a system that combines sensors readings from brain, skin, and eye to measure usability and user experience. "+
+              "I built Windows Application using C# and SQL Server",
             images: ["images/bur.png"]
         },
         {
@@ -181,14 +182,14 @@ var projects = {
         {
             title: "Steganography Tool",
             dates: "Jan 2012 –Jan 2013",
-            description: "The aim of this project is to develop system able to hide and retrieve the secret message hidden \
-                    in Arabic or English text, image or video frames using Java.",
+            description: "The aim of this project is to develop system able to hide and retrieve the secret message hidden "+
+                   " in Arabic or English text, image or video frames using Java.",
             images: ["images/bur.png"]
         }
 
     ],
     display: function() {
-        for (project in projects.projects) {
+        for (var project in projects.projects) {
             $("#projects").append(HTMLprojectStart);
             var titleFormat = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
             $(".project-entry:last").append(titleFormat);
@@ -198,7 +199,7 @@ var projects = {
             $(".project-entry:last").append(descriptionFormat);
             if (projects.projects[project].images.length > 0) {
 
-                for (image in projects.projects[project].images) {
+                for (var image in projects.projects[project].images) {
                     var imageFormat = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
                     $(".project-entry:last").append(imageFormat);
                 }
