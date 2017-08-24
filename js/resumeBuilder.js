@@ -94,16 +94,16 @@ var education = {
         /* display all onlineCourses */
         if (education.onlineCourses.length > 0) {
             $(".education-entry:last").append(HTMLonlineClasses);
-  for (var i=0; i < education.onlineCourses.length; i++) {
+  for (var j=0; j < education.onlineCourses.length; j++) {
 
-                var OnlinetitleFormat = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
-                var Onlineurlformat = OnlinetitleFormat.replace("#", education.onlineCourses[i].url);
-                var schoolformat = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+                var OnlinetitleFormat = HTMLonlineTitle.replace("%data%", education.onlineCourses[j].title);
+                var Onlineurlformat = OnlinetitleFormat.replace("#", education.onlineCourses[j].url);
+                var schoolformat = HTMLonlineSchool.replace("%data%", education.onlineCourses[j].school);
                 var allTitleFormat = Onlineurlformat + schoolformat;
                 $(".education-entry:last").append(allTitleFormat);
-                var dateFormat = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+                var dateFormat = HTMLonlineDates.replace("%data%", education.onlineCourses[j].dates);
                 $(".education-entry:last").append(dateFormat);
-                var url = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+                var url = HTMLonlineURL.replace("%data%", education.onlineCourses[j].url);
                 $(".education-entry:last").append(url);
 
             }
