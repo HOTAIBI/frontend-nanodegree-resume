@@ -2,11 +2,11 @@ var bio = {
     name: "Hissah ALOTAIBI",
     role: "Software Developer",
     contacts: {
-        mobile: "0507988228",
-        email: "hassah-111@hotmail.com",
+        mobile: "0000",
+        email: "h",
         github: "hotaibi",
-        twitter: "@hassose",
-        location: "An Nasim Al Gharbi, Riyadh"
+        twitter: "@ha",
+        location: " Riyadh"
     },
     welcomeMessage: "Welcome",
     skills: ["Programming languages", "Web Programming", "Database", "Use Linux operating system", "Use Microsoft software office efficiently", "Graphic Design"],
